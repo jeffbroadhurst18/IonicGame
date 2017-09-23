@@ -1,0 +1,26 @@
+.game-square{
+ border: black;
+ border-width: 2px;
+ border-style: solid;
+ height: 180px;
+ width:180px;
+ /*background: white;*/
+}
+
+.game-row{
+    height: 30px;
+}
+
+.game-frame {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
