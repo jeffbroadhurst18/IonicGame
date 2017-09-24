@@ -4,6 +4,7 @@
  border-style: solid;
  height: 180px;
  width:180px;
+ cursor: pointer;
  /*background: white;*/
 }
 
@@ -22,5 +23,10 @@
 
 .green {
     color: green;
+}
+
+.headbor {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 

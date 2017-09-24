@@ -1,8 +1,13 @@
-<h1>Red and Green Game</h1>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2"><button ion-button (click)="restart()">Re-Start</button></div>
-    <div class="col-md-7 game-frame">
+    <div class="col-md-1"></div>
+    <div class="col-md-5 headbor">
+      <h1>Red and Green Game</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"><button ion-button (click)="restart()">Re-Start</button></div>
+    <div class="col-md-5 game-frame">
       <table>
         <tr *ngFor="let row of rows">
           <td class="game-square" [@squareState]="row.one" (click)="processClick(1,row)"></td>
@@ -11,12 +16,15 @@
         </tr>
       </table>
     </div>
-    <div class="col-md-3">
-      <div [hidden]="haveAWinner==true" class="{{nextcolor}}">
+    <div class="col-md-4">
+      <div [hidden]="haveAWinner || totalSelected == 9" class="{{nextcolor}}">
         <h3>Next Colour: {{nextcolor}}</h3>
       </div>
-      <div [hidden]="haveAWinner!=true">
+      <div [hidden]="!haveAWinner" class="{{lastcolor}}">
         <h3>Winner is : {{winnerName}}</h3>
+      </div>
+      <div [hidden]="haveAWinner || totalSelected < 9">
+        <h3>The result is a draw. Play again.</h3>
       </div>
     </div>
   </div>

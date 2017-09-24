@@ -25,12 +25,15 @@ export class GamePage {
     selected: Array<number>;
     winnerName: string;
     haveAWinner : boolean;
+    lastcolor: string;
+    totalSelected: number;
     
     private setUp() {
         this.rows = new Array<GameRow>();
         this.selected = new Array<number>();
         this.winnerName = null;
         this.haveAWinner = false;
+        this.totalSelected = 0;
 
         for (var i = 0; i < 3; i++) {
             this.rows[i] = new GameRow();
@@ -51,6 +54,8 @@ export class GamePage {
         this.checkResults(this.nextcolor);
         if (this.changed) {
             this.nextcolor = (this.nextcolor === 'green') ? 'red' : 'green';
+            this.lastcolor = (this.nextcolor === 'green') ? 'red' : 'green';
+            this.totalSelected++;
         }
     }
 
